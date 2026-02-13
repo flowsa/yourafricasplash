@@ -31,5 +31,16 @@
       style="width: 600px; height: 600px"
       autoplay
     ></dotlottie-wc>
+    <script>
+      const player = document.querySelector('dotlottie-wc');
+      player.addEventListener('dotlottie-ready', () => {
+        const lottie = player.dotLottie;
+        lottie.addEventListener('frame', ({ currentFrame }) => {
+          if (currentFrame >= lottie.totalFrames - 2) {
+            lottie.pause();
+          }
+        });
+      });
+    </script>
 </body>
 </html>
