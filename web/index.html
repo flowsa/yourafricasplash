@@ -35,8 +35,9 @@
       const player = document.querySelector('dotlottie-wc');
       player.addEventListener('dotlottie-ready', () => {
         const lottie = player.dotLottie;
+        const stopFrame = lottie.totalFrames * 0.95;
         lottie.addEventListener('frame', ({ currentFrame }) => {
-          if (currentFrame >= lottie.totalFrames - 2) {
+          if (currentFrame >= stopFrame) {
             lottie.pause();
           }
         });
